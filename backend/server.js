@@ -13,6 +13,7 @@ import bidRoutes from './routes/bids.js';
 dotenv.config();
 
 const app = express();
+app.set('trust proxy', 1); // Trust first proxy (necessary for Render/Heroku secure cookies)
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
