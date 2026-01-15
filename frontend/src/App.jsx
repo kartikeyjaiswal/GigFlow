@@ -46,15 +46,11 @@ function App() {
     </ErrorBoundary>
   );
 
-  if (hasValidClientId) {
-    return (
-      <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
-        {content}
-      </GoogleOAuthProvider>
-    );
-  }
-
-  return content;
+  return (
+    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+      {content}
+    </GoogleOAuthProvider>
+  );
 }
 
 export default App;
