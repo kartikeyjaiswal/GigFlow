@@ -39,6 +39,11 @@ app.use('/api/auth', authRoutes);
 app.use('/api/gigs', gigRoutes);
 app.use('/api/bids', bidRoutes);
 
+// Root route
+app.get('/', (req, res) => {
+  res.send('API is running successfully');
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({
